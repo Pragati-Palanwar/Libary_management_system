@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "c074f75e-b7cc-477b-9604-e82b7abcad80",
+		"name": "Library Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26580138"
+	},
+	"item": [
+		{
+			"name": "1. Create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTE0MDk5LCJpYXQiOjE3MzQxMTM3OTksImp0aSI6IjFhNTM4OTI3YTAxNTQwNDQ4MzI0YzcyZmNjMzAzNjJkIiwidXNlcl9pZCI6Nn0._-HCHJhZSpRiphz1LtrzY2af0nAoqXClA2DDiNx4IgE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Xyz\",\r\n  \"email\": \"xyz@example.com\",\r\n  \"password\": \"password123\",\r\n  \"is_librarian\": false\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create-user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTE0MDk5LCJpYXQiOjE3MzQxMTM3OTksImp0aSI6IjFhNTM4OTI3YTAxNTQwNDQ4MzI0YzcyZmNjMzAzNjJkIiwidXNlcl9pZCI6Nn0._-HCHJhZSpRiphz1LtrzY2af0nAoqXClA2DDiNx4IgE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/all-users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"all-users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTE0MDk5LCJpYXQiOjE3MzQxMTM3OTksImp0aSI6IjFhNTM4OTI3YTAxNTQwNDQ4MzI0YzcyZmNjMzAzNjJkIiwidXNlcl9pZCI6Nn0._-HCHJhZSpRiphz1LtrzY2af0nAoqXClA2DDiNx4IgE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New Book Title 2\",\r\n    \"author\": \"Author Name 2\",\r\n    \"available\": true,\r\n    \"copies_available\":15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/librarian/add-book/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"librarian",
+						"add-book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Lib all borrow requests",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "3. approve/deny borrow request id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTE0MDk5LCJpYXQiOjE3MzQxMTM3OTksImp0aSI6IjFhNTM4OTI3YTAxNTQwNDQ4MzI0YzcyZmNjMzAzNjJkIiwidXNlcl9pZCI6Nn0._-HCHJhZSpRiphz1LtrzY2af0nAoqXClA2DDiNx4IgE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"action\": \"deny\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/librarian/borrow-request/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"librarian",
+						"borrow-request",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. User borrow history id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTEzMTY5LCJpYXQiOjE3MzQxMTI4NjksImp0aSI6ImExMTdiZTIzMDNlYjRmZGE4NjFmOGNhOGIyY2MxMmQ4IiwidXNlcl9pZCI6Nn0.NB1i6pDU-FkWZFl1R7v1xz2KbdnVs8lRB9vYLCING5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/librarian/user-borrow-history/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"librarian",
+						"user-borrow-history",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. All book list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTEzMTY5LCJpYXQiOjE3MzQxMTI4NjksImp0aSI6ImExMTdiZTIzMDNlYjRmZGE4NjFmOGNhOGIyY2MxMmQ4IiwidXNlcl9pZCI6Nn0.NB1i6pDU-FkWZFl1R7v1xz2KbdnVs8lRB9vYLCING5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/books/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Submit borrow request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTEzMTY5LCJpYXQiOjE3MzQxMTI4NjksImp0aSI6ImExMTdiZTIzMDNlYjRmZGE4NjFmOGNhOGIyY2MxMmQ4IiwidXNlcl9pZCI6Nn0.NB1i6pDU-FkWZFl1R7v1xz2KbdnVs8lRB9vYLCING5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"book\": 2,\r\n  \"date_from\": \"2024-01-01\",\r\n  \"date_to\": \"2024-01-15\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/borrow-requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"borrow-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Personal book borrow history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTEzMTY5LCJpYXQiOjE3MzQxMTI4NjksImp0aSI6ImExMTdiZTIzMDNlYjRmZGE4NjFmOGNhOGIyY2MxMmQ4IiwidXNlcl9pZCI6Nn0.NB1i6pDU-FkWZFl1R7v1xz2KbdnVs8lRB9vYLCING5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/borrow-requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"borrow-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Download Borrow History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MTEzMTY5LCJpYXQiOjE3MzQxMTI4NjksImp0aSI6ImExMTdiZTIzMDNlYjRmZGE4NjFmOGNhOGIyY2MxMmQ4IiwidXNlcl9pZCI6Nn0.NB1i6pDU-FkWZFl1R7v1xz2KbdnVs8lRB9vYLCING5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/download-borrow-history/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"download-borrow-history",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Create Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Dhiraj\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNDE5OTI2OSwiaWF0IjoxNzM0MTEyODY5LCJqdGkiOiJiZDNmOWY0NGRhNjk0MTM3YWM1ZTZhMThjZjIyNjIyNCIsInVzZXJfaWQiOjZ9.yj9mOi2kA9NKr8i_s8qkqzr0sSgoCiKUa6A3fbB4EMs\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
